@@ -18,7 +18,67 @@
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
-    <main id="app"></main>
+    <header>
+      <nav class="container">
+        <img src="src/assets/logo.png" alt="Logo do app">
+        <button class="register-value">Registrar novo valor</button>
+      </nav>
+    </header>
+    <main id="app" class="container">
+      <div class="filters">
+        <p>Resumo financeiro</p>
+        <div class="container-filter">
+          <button class="item-filter">Todos</button>
+          <button class="item-filter">Entradas</button>
+          <button class="item-filter">Saidas</button>
+        </div>
+      </div>
+      <div class="sum-result">
+        <p>Soma dos valores</p>
+        <p>R$ 0,00</p>
+      </div>
+
+      <div class="values-list">
+        <div class="value-item">
+          <p>R$ 0,00</p>
+          <div class="actions-button">
+            <span class="type-value">Entrada</span>
+            <button><img src="src/assets/trash-icon.png" alt="icone lixeira"></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <div class="modal-background">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Registro de valor</h3>
+          <button>X</button>
+        </div>
+
+        <p>
+          Digite o valor e em seguida aperte no botão referente ao tipo do valor 
+        </p>
+
+        <div class="value">
+          <label for="value">Value:</label>
+          <input type="text" placeholder="R$ 0,00" name="value">
+        </div>
+
+        <div class="type-label">
+          <p>Tipo de valor:</p>
+          <select name="label-type" class="">
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saida</option>
+          </select>
+        </div>
+
+        <div class="actions-container">
+          <button class="btn-action">Cancelar</button>
+          <button class="btn-action--marked">Inserir valor</button>
+        </div>
+      </div>
+    </div>
     <script src="./src/scripts/modal.js"></script>
     <script src="./src/scripts/valuesData.js"></script>
     <script src="./src/scripts/index.js"></script>
