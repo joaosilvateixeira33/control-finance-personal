@@ -21,7 +21,7 @@
     <header>
       <nav class="container">
         <img src="src/assets/logo.png" alt="Logo do app">
-        <button class="register-value">Registrar novo valor</button>
+        <button class="register-value" id="openModal">Registrar novo valor</button>
       </nav>
     </header>
     <main id="app" class="container">
@@ -35,25 +35,17 @@
       </div>
       <div class="sum-result">
         <p>Soma dos valores</p>
-        <p>R$ 0,00</p>
+        <p id="totalSum">R$ 0,00</p>
       </div>
 
-      <div class="values-list">
-        <div class="value-item">
-          <p>R$ 0,00</p>
-          <div class="actions-button">
-            <span class="type-value">Entrada</span>
-            <button><img src="src/assets/trash-icon.png" alt="icone lixeira"></button>
-          </div>
-        </div>
-      </div>
+      <div class="values-list"></div>
     </main>
-    
-    <div class="modal-background">
+
+    <dialog class="modal-background" id="modal">
       <div class="modal">
         <div class="modal-header">
           <h3>Registro de valor</h3>
-          <button>X</button>
+          <button id="closeModal">X</button>
         </div>
 
         <p>
@@ -61,26 +53,26 @@
         </p>
 
         <div class="value">
-          <label for="value">Value:</label>
-          <input type="text" placeholder="R$ 0,00" name="value">
+          <label for="valueInput">Value:</label>
+          <input type="text" placeholder="R$ 0,00" id="valueInput">
         </div>
 
         <div class="type-label">
           <p>Tipo de valor:</p>
-          <select name="label-type" class="">
-            <option value="entrada">Entrada</option>
-            <option value="saida">Saida</option>
+          <select id="categorySelect">
+            <option value="0">Entrada</option>
+            <option value="1">Saída</option>
           </select>
         </div>
 
         <div class="actions-container">
-          <button class="btn-action">Cancelar</button>
-          <button class="btn-action--marked">Inserir valor</button>
+          <button class="btn-action" id="cancelModal">Cancelar</button>
+          <button class="btn-action--marked" id="saveValue">Inserir valor</button>
         </div>
       </div>
-    </div>
+    </dialog>
     <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/valuesData.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>

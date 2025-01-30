@@ -65,4 +65,20 @@ body {
     max-width: 43rem;
     margin: 0 1rem;
   }
+
+  nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .filters{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal{
+    width: 100vw;
+  }
 }
