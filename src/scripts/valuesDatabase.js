@@ -33,7 +33,7 @@ export const createValueElement = ({ id, value, categoryID }) => {
   div.classList.add("value-item");
 
   div.innerHTML = `
-    <p>R$ ${value.toLocaleString("pt-BR", {
+    <p>${value.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
     })}</p>
@@ -51,7 +51,7 @@ export const renderValues = (insertedValues) => {
   container.innerHTML = "";  
   insertedValues.forEach(value => container.appendChild(createValueElement(value)));
   const total = sumResult(insertedValues);
-  document.getElementById("totalSum").textContent = `Total: ${total.toLocaleString("pt-BR", {
+  document.getElementById("totalSum").textContent = `${total.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
   })}`;
